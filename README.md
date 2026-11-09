@@ -1,32 +1,63 @@
-# Nado Protocol
+# Nado Contracts ⚡
 
-This repository contains the smart contract implementations for the Nado Protocol ecosystem.
+> EVM smart contract implementation for the Nado Protocol — a DeFi protocol core built with Solidity and Hardhat.
 
-## Project Structure
+[![Solidity](https://img.shields.io/badge/Solidity-0.8.x-363636?logo=solidity)](https://docs.soliditylang.org/)
+[![Hardhat](https://img.shields.io/badge/Hardhat-build-yellow)](https://hardhat.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-- **[nado-contracts/core](./core)**: EVM implementation of Nado core functionality
+## What It Does
 
-## Requirements
+This repository contains the core EVM smart contracts for the Nado Protocol — a DeFi protocol. The contracts implement Nado's on-chain logic and are structured for Hardhat-based compilation, testing, and deployment.
 
-- Node.js >=16
+## Repository Structure
+
+```
+nado-contracts/
+├── core/                   # EVM implementation of Nado core
+│   ├── contracts/          # Solidity source files
+│   ├── tasks/              # Hardhat tasks
+│   ├── hardhat.config.ts
+│   └── package.json
+└── .github/                # CI workflows
+```
+
+## Screenshot
+
+<!-- TODO: add a screenshot of `yarn compile` output here -->
+![Compile output](docs/screenshot.png)
+
+## Prerequisites
+
+- Node.js >= 16
 - [Yarn](https://yarnpkg.com/)
 
-## Getting Started
+## Installation
 
-### Nado EVM Core Contracts
-```
+```bash
+git clone https://github.com/kalialucard/nado-contracts.git
 cd nado-contracts/core
 yarn install
-yarn compile
 ```
 
-## Available Commands
+## Usage
 
-### Core Contracts
+```bash
+# Compile contracts
+yarn compile
 
-- `yarn compile`: Compile Nado EVM contracts
-- See project-specific README for more details
+# Run tests
+yarn test
 
-## Further Documentation
+# Deploy to a local Hardhat network
+yarn hardhat node
+yarn hardhat deploy --network localhost
+```
 
-For more detailed information about each project, please refer to their respective README files.
+## Security
+
+This repository is a research/audit reference. Do not deploy unaudited contracts to mainnet. Review `core/VERIFICATION.md` for contract verification details.
+
+## License
+
+[MIT](LICENSE) © kalialucard
